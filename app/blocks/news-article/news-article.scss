@@ -1,0 +1,36 @@
+.news-article {
+	@include row-grid(var(--gap));
+	grid-template-rows: 18rem auto;
+
+	// .news-article__picture
+
+	&__picture {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover
+		}
+	}
+
+	// .news-article__content
+
+	&__content {
+		@include row-grid(1rem);
+		justify-items: start;
+	}
+
+	// .news-article__time
+
+	&__time {
+		color: var(--gray);
+	}
+
+	// .news-article__title
+
+	&__title {
+		font-size: calc(#{$fz} / 10 * 1rem);
+		font-weight: 400;
+	}
+}
+
+.full-link {}

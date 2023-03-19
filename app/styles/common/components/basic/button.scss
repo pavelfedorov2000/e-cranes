@@ -1,0 +1,83 @@
+.btn {
+	$this: &;
+
+	display: inline-flex;
+	align-items: center;
+	font-size: calc(#{$fz} / 10 * 1rem);
+	line-height: 1.2;
+	background-color: $color-default;
+	transition: $transition all;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--red);
+			color: $color-default;
+		}
+	}
+
+	&.disabled,
+	&[disabled] {
+		border: none;
+		cursor: not-allowed;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color-default;
+			}
+		}
+	}
+
+	&__arrow {
+		flex-shrink: 0;
+		margin-left: 2rem;
+		width: 6rem;
+		height: 2.4rem;
+		stroke: $color-default;
+		transition: $transition stroke;
+	}
+
+	&__text {
+		letter-spacing: -0.02em;
+	}
+
+	&--style {
+
+		&_more,
+		&_link {
+			background-color: transparent;
+			color: $color-default;
+
+			#{$this} {
+				&__text {
+					text-decoration: underline;
+				}
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: transparent;
+					color: var(--red);
+
+					#{$this}__arrow {
+						stroke: var(--red);
+					}
+				}
+			}
+		}
+
+		&_border {
+			padding: 2rem var(--gap);
+			background-color: $color-default;
+			border-radius: $brs-round;
+			border: 0.1rem solid var(--dark);
+			color: var(--dark);
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--dark);
+					color: $color-default;
+				}
+			}
+		}
+	}
+}

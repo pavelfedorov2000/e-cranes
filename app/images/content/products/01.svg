@@ -1,0 +1,31 @@
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-2-inside-1_401_5" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M67 21H35V83H39V25H63V83H67V21Z"/>
+</mask>
+<path d="M35 21V20H34V21H35ZM67 21H68V20H67V21ZM35 83H34V84H35V83ZM39 83V84H40V83H39ZM39 25V24H38V25H39ZM63 25H64V24H63V25ZM63 83H62V84H63V83ZM67 83V84H68V83H67ZM35 22H67V20H35V22ZM36 83V21H34V83H36ZM39 82H35V84H39V82ZM40 83V25H38V83H40ZM39 26H63V24H39V26ZM62 25V83H64V25H62ZM67 82H63V84H67V82ZM66 21V83H68V21H66Z" fill="#1B1B1B" mask="url(#path-2-inside-1_401_5)"/>
+<rect x="32.5" y="43.5" width="3" height="15" stroke="#1B1B1B"/>
+<rect x="66.5" y="43.5" width="3" height="15" stroke="#1B1B1B"/>
+<path d="M45.4165 24.5L45.4165 27.3333L49.4165 27.3333" stroke="#1B1B1B"/>
+<path d="M57 24.5L57 27.3333L53 27.3333" stroke="#1B1B1B"/>
+<path d="M42.9165 60.25H38.9165" stroke="#1B1B1B"/>
+<path d="M59.5 60.25H63.5" stroke="#1B1B1B"/>
+<path d="M42.9165 50H38.9165" stroke="#1B1B1B"/>
+<path d="M59.5 50H63.5" stroke="#1B1B1B"/>
+<path d="M42.9165 30.5H38.9165" stroke="#1B1B1B"/>
+<path d="M59.5 30.5H63.5" stroke="#1B1B1B"/>
+<path d="M39 73.4166H44V77.4166" stroke="#1B1B1B"/>
+<path d="M63.4165 73.4166H58.4165V77.4166" stroke="#1B1B1B"/>
+<path d="M40 70V73" stroke="#1B1B1B"/>
+<path d="M62 70V73" stroke="#1B1B1B"/>
+<path d="M42.0835 73.25V76.25" stroke="#1B1B1B"/>
+<path d="M60.333 73.25V76.25" stroke="#1B1B1B"/>
+<path d="M39 39H43V35" stroke="#1B1B1B"/>
+<path d="M63.4165 39H59.4165V35" stroke="#1B1B1B"/>
+<path d="M39 57.9167H43V53.9167" stroke="#1B1B1B"/>
+<path d="M63.4165 57.9167H59.4165V53.9167" stroke="#1B1B1B"/>
+<path d="M39 42.6667H43V46.6667" stroke="#1B1B1B"/>
+<path d="M63.4165 42.6667H59.4165V46.6667" stroke="#1B1B1B"/>
+<path d="M39 62.5834H43V66.5834" stroke="#1B1B1B"/>
+<path d="M63.4165 62.5834H59.4165V66.5834" stroke="#1B1B1B"/>
+<rect x="1" y="1" width="100" height="100" rx="50" stroke="#CBCBCB" stroke-dasharray="4 4"/>
+</svg>

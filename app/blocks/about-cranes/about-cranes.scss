@@ -1,0 +1,68 @@
+.about-cranes {
+	padding: 35rem 0 30rem;
+	background-image: url(../images/content/crane.svg);
+	background-position: 100% 12.3rem;
+	background-size: 93.2rem 66.9rem;
+	background-repeat: no-repeat;
+	// .about-cranes__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 32rem 49.3rem 22.7rem 1fr;
+		grid-template-rows: auto 14.3rem auto;
+		grid-template-areas:
+			'title title title title'
+			'. . . .'
+			'. text . more'
+		;
+	}
+
+	// .about-cranes__title
+
+	&__title {
+		grid-area: title;
+		font-size: 17.8rem;
+		line-height: 90%;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--gray);
+
+		span {
+			color: var(--red);
+		}
+	}
+
+	// .about-cranes__text
+
+	&__text {
+		grid-area: text;
+		@include row-grid(5.2rem);
+	}
+
+	// .about-cranes__more
+
+	&__more {
+		align-self: flex-end;
+		grid-area: more;
+		display: flex;
+		align-items: center;
+		gap: 9rem;
+	}
+
+	// .about-cranes__more-icons
+
+	&__more-icons {
+		display: flex;
+	}
+
+	// .about-cranes__more-icon
+
+	&__more-icon {
+		@include round(6rem);
+		flex-shrink: 0;
+
+		img {
+			object-fit: cover;
+		}
+	}
+}

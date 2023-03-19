@@ -1,0 +1,43 @@
+<section class="free-consultations">
+	<div class="container">
+		<div class="free-consultations__grid">
+			<picture class="free-consultations__picture">
+				<source type="image/webp" srcset="assets/images/content/consultator.webp">
+				<img src="assets/images/content/consultator.jpg" alt="" width="900" height="800" loading="lazy">
+			</picture>
+			<h2 class="section-title free-consultations__title">Бесплатные консультации</h2>
+			<p class="free-consultations__text">
+				Мы окажем профессиональные консультационные услуги по техническим вопросам, поможем выбрать оборудование
+				под конкретные задачи.
+			</p>
+			@@include('blocks/button/button.html', {
+			"class": "free-consultations__btn",
+			"style": "border",
+			"text": "Консультация"
+			})
+			<dl class="free-consultations__list">
+				<div class="free-consultations__list-item">
+					<dt>Современное оборудование</dt>
+					<dd>
+						Наличие запасных частей, комплектующих позволяет обеспечить минимальные сроки ремонта, сборки,
+						модернизации ГПМ.
+					</dd>
+				</div>
+				<div class="free-consultations__list-item">
+					<dt>Аттестованный персонал</dt>
+					<dd>
+						Наши сотрудники имеют профильное образование, регулярно проходят дополнительное обучение и
+						повышают квалификацию.
+					</dd>
+				</div>
+				<div class="free-consultations__list-item">
+					<dt>Гибкая ценовая политика</dt>
+					<dd>
+						Стоимость работ рассчитывается нашими специалистами индивидуально, позволяя нашим клиентам
+						грамотно распределять бюджет и экономить.
+					</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>

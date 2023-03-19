@@ -1,0 +1,35 @@
+.company-experience {
+	display: grid;
+	grid-template-rows: minmax(70rem, auto);
+	// .company-experience__picture
+
+	&__picture {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__picture,
+	&__content {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	// .company-experience__content
+
+	&__content {
+		padding: var(--gap);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	// .company-experience__text
+
+	&__text {
+		max-width: 77.2rem;
+		font-size: 4.2rem;
+	}
+}
