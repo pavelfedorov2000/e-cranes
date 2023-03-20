@@ -1,3 +1,139 @@
 .form-section {
-  // your code
+    // .form-section__form-fields
+
+    &__form {
+        margin-top: var(--gap);
+        display: grid;
+        grid-template-columns: var(--gap) auto 1fr auto var(--gap);
+        grid-template-areas: 'fields fields fields fields fields'
+            '. agree . btn .'
+        ;
+        gap: var(--gap) 0;
+
+        @media(min-width: $md) {
+            align-items: center;
+        }
+
+        @media(max-width: $sm) {
+            grid-template-columns: var(--gap) 1fr var(--gap);
+            grid-template-areas: 'fields fields fields'
+                '. agree .'
+                '. btn .'
+            ;
+        }
+    }
+
+    &__form-fields {
+        display: grid;
+        grid-template-rows: auto minmax(30rem, max-content);
+        grid-area: fields;
+
+        @media(min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media(max-width: $sm) {
+            grid-template-rows: repeat(3, auto) minmax(16rem, max-content);
+        }
+    }
+
+    // .form-section__form-item
+
+    &__form-item {
+        position: relative;
+        padding: 2.8rem var(--gap);
+        border-bottom: 0.1rem solid var(--line-color-dark);
+
+        &:first-child {
+            border-top: 0.1rem solid var(--line-color-dark);
+        }
+
+        &:nth-child(2) {
+            @media(min-width: $md) {
+                border-top: 0.1rem solid var(--line-color-dark);
+            }
+        }
+
+        &:nth-child(even) {
+            @media(min-width: 768px) {
+                border-left: 0.1rem solid var(--line-color-dark);
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+
+        &--file {
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: var(--gap);
+                width: 4rem;
+                height: 4rem;
+                background-image: url(../images/icons/plus.svg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                @media(max-width: $sm) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+                @media(min-width: $md) {
+                    bottom: var(--gap);
+                }
+            }
+        }
+    }
+
+    &__form-input {
+        &::placeholder {
+            color: var(--gray);
+        }
+    }
+
+    // .form-section__form-footer
+
+    &__form-footer {
+        @include padding-x(var(--gap));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap-xs);
+    }
+
+    &__agree {
+        grid-area: agree;
+    }
+
+    &__form-btn {
+        grid-area: btn;
+        justify-self: start;
+    }
+}
+
+input[type=file] {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+}
+
+.form-section__form-input,
+.placeholder {
+    font-size: 2rem;
+    line-height: calc(24 / 20 * 100%);
+    letter-spacing: -0.02em;
+    color: var(--gray);
+
+    @media(max-width: $sm) {
+        font-size: 1.4rem;
+    }
 }

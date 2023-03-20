@@ -1,18 +1,20 @@
 .tags {
-	@include row-grid(0.8rem);
-	justify-items: start;
+    @include row-grid(0.8rem);
+    justify-items: start;
 }
 
 .tag {
-	padding: 0.8rem 1.2rem;
-	border: 0.1rem solid var(--line-color-dark);
-	border-radius: $brs-2;
-	transition: $transition border-color, $transition color;
+    position: relative;
+    z-index: 2;
+    padding: 0.8rem 1.2rem;
+    border: 0.1rem solid var(--line-color-dark);
+    border-radius: $brs-2;
+    transition: $transition border-color, $transition color;
 
-	@media (any-hover: hover) {
-		&:hover {
-			border-color: $color-default;
-			color: $color-default;
-		}
-	}
+    @media (any-hover: hover) {
+        &:hover {
+            border-color: $color-default;
+            color: $color-default;
+        }
+    }
 }

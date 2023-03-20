@@ -1,64 +1,58 @@
 .swiper-button-prev,
 .swiper-button-next {
-	top: 0;
-	right: 0;
-	width: 5.6rem;
-	height: 5.6rem;
-	background-color: #BDBDBD;
-	margin: 0;
-	transition: .3s all;
+    position: static;
+    display: grid;
+    place-items: center;
+    width: 8rem;
+    height: 4rem;
+    border: 0.1rem solid #fff;
+    border-radius: $brs-round;
+    margin: 0;
+    transition: $transition border-color;
 
-	&:after {
-		content: '';
-		@extend %pos-center-xy;
-		width: 0.7rem;
-		height: 0.8rem;
-		background-color: #FFF;
-	}
+    &::after {
+        display: none;
+    }
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: $accent;
-			border-color: $accent;
+    svg {
+        width: 4.1rem;
+        height: 1.8rem;
+        stroke: #fff;
+        transition: $transition stroke;
+    }
 
-			svg path {
-				stroke: #fff;
-			}
-		}
-	}
+    @media (any-hover: hover) {
+        &:hover {
+            border-color: var(--red);
+
+            svg {
+                stroke: var(--red);
+            }
+        }
+    }
 }
 
-.swiper-button-next {
-	margin-bottom: 0;
-	margin-left: 0.8rem;
+.swiper-btns {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: var(--gap-xs);
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+/* .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-	display: flex;
-	justify-content: center;
-	@extend %pos-center-x;
-	bottom: 0;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-	width: 1rem;
-	height: 1rem;
-	border-radius: 50%;
-	background-color: $dark;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: $dark;
 
-	&:not(:last-child) {
-		margin-right: 1.65rem;
-	}
-}
-
-/* .swiper-pagination-current,
-.swiper-pagination-total {
-    &:before {
-        content: '0'; // если хотим нумерацию 01, 02, 03, ...
-        position: absolute;
-        top: 0;
-        left: 0;
+    &:not(:last-child) {
+        margin-right: 1.65rem;
     }
 } */

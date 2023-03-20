@@ -1,35 +1,48 @@
 .company-experience {
-	display: grid;
-	grid-template-rows: minmax(70rem, auto);
-	// .company-experience__picture
+    display: grid;
+    grid-template-rows: minmax(70rem, auto);
 
-	&__picture {
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+    @media(max-width: $lg) {
+        grid-template-rows: minmax(50rem, auto);
+    }
 
-	&__picture,
-	&__content {
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
-	}
+    @media(max-width: $sm) {
+        grid-template-rows: minmax(25rem, auto);
+    }
 
-	// .company-experience__content
+    // .company-experience__picture
 
-	&__content {
-		padding: var(--gap);
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-	}
+    &__picture {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 
-	// .company-experience__text
+    &__picture,
+    &__content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
 
-	&__text {
-		max-width: 77.2rem;
-		font-size: 4.2rem;
-	}
+    // .company-experience__content
+
+    &__content {
+        padding: var(--gap);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    // .company-experience__text
+
+    &__text {
+        max-width: 77.2rem;
+        font-size: 4.2rem;
+
+        @media(max-width: $sm) {
+            font-size: 1.6rem;
+        }
+    }
 }

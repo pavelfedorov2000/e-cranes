@@ -1,3 +1,268 @@
 .geography {
-  // your code
+    position: relative;
+    padding-top: var(--gap-xl);
+    background-color: var(--light-gray);
+    color: var(--dark);
+
+    // .geography__grid
+
+    &__grid {
+        @include row-grid(var(--gap-xl));
+
+        @media(max-width: $sm) {
+            row-gap: var(--gap-l);
+        }
+
+        @media(min-width: $xl) {
+            grid-template-columns: 79rem 149rem - 79rem 1fr;
+            grid-template-rows: repeat(2, auto) 2.3rem repeat(2, auto);
+            grid-template-areas: 'title title .'
+                'cities . .'
+                '. . .'
+                'moreCities . .'
+                'logos logos logos'
+            ;
+        }
+    }
+
+    &__top {
+        @media(min-width: $xl) {
+            position: relative;
+            grid-area: title;
+        }
+    }
+
+    // .geography__title
+
+    &__title {
+        color: var(--dark);
+    }
+
+    // .geography__images
+
+    &__images {
+        display: grid;
+        grid-template-columns: 25.9rem 12.4rem;
+        gap: var(--gap-xs);
+        align-content: start;
+
+        @media(max-width: $lg) {
+            margin-top: var(--gap);
+        }
+
+        @media(max-width: $sm) {
+            grid-template-columns: 1fr 8rem;
+        }
+
+        @media(min-width: $xl) {
+            position: absolute;
+            top: var(--gap-xs);
+            right: -7.6rem;
+        }
+    }
+
+    // .geography__img
+
+    &__img {
+        img {
+            width: 100%;
+            height: 0;
+            transition: $transition-long height;
+            //height: 12.4rem;
+
+            @media(max-width: $sm) {
+                height: 8rem;
+            }
+        }
+
+        &:first-child {
+            img {
+                border-radius: 9rem;
+            }
+        }
+
+        &:nth-child(2) {
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        &.in-view {
+            img {
+                height: 12.4rem;
+            }
+        }
+    }
+
+    // .geography__cities
+
+    &__cities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem 3.2rem;
+
+        @media(max-width: $sm) {
+            gap: 1rem 1.6rem;
+        }
+
+        @media(min-width: $xl) {
+            grid-area: cities;
+        }
+
+        li {
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+
+            @media(max-width: $sm) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    // .geography__cities-more
+
+    &__cities-more {
+        columns: 3;
+
+        @media(min-width: $xl) {
+            grid-area: moreCities;
+        }
+
+        li {
+            color: var(--gray);
+
+            @media(max-width: $xs) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &__logos {
+        @include padding-y(var(--gap));
+        width: calc(100vw - var(--gap) * 2);
+        border-top: 0.1rem solid #fff;
+        display: flex;
+        flex-direction: row-reverse;
+        animation-duration: 12s;
+        animation-name: marquee;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+        @media (any-hover: hover) {
+            &:hover {
+                animation: none;
+            }
+        }
+
+        @media(min-width: $xl) {
+            grid-area: logos;
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+        width: calc((100vw - var(--gap) * 2) / 9);
+        @include padding-x(4.2rem);
+        border-left: 0.1rem solid #fff;
+        border-right: 0.1rem solid #fff;
+        transition: $transition opacity;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+
+        @media(max-width: $lg) {
+            width: calc((100vw - var(--gap) * 2) / 4);
+        }
+
+        @media(max-width: $sm) {
+            @include padding-x(var(--gap));
+            width: calc((100vw - var(--gap) * 2) / 2);
+        }
+
+        img {
+            width: 13rem;
+            height: 6rem;
+            object-fit: contain;
+        }
+    }
+
+    // .geography__map
+
+    &__map {
+        width: 87.7rem;
+
+        @media(min-width: $xl) {
+            height: 71.9rem;
+            position: absolute;
+            bottom: 13rem;
+            right: 0;
+        }
+
+        @media(max-width: $lg) {
+            width: 100%;
+        }
+
+        .circle {
+
+            &-1,
+            &-2,
+            &-3,
+            &-4,
+            &-5,
+            &-6,
+            &-7,
+            &-8,
+            &-9,
+            &-10,
+            &-11,
+            &-12,
+            &-13,
+            &-14 {
+                animation-duration: 3s;
+                animation-name: mapPin;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            /* &-2,
+            &-4,
+            &-6,
+            &-8,
+            &-10,
+            &-12,
+            &-14 {
+                animation-delay: 3s;
+            } */
+        }
+    }
+}
+
+@keyframes mapPin {
+    0% {
+        //fill: var(--dark);
+        r: 0.4rem;
+    }
+
+    50% {
+        //fill: var(--red);
+        r: 1rem;
+    }
+
+    100% {
+        //fill: var(--dark);
+        r: 0.4rem;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }

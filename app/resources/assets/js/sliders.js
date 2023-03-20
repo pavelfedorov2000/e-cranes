@@ -1,16 +1,12 @@
 $(function () {
-    new Swiper('.sale-slider', {
+    new Swiper('.our-works-slider', {
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
+        slidesPerView: 2,
+        spaceBetween: 30,
         speed: 1000,
         navigation: {
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
         },
         breakpoints: {
             768: {

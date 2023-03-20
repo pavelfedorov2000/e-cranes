@@ -1,68 +1,102 @@
 .about-cranes {
-	padding: 35rem 0 30rem;
-	background-image: url(../images/content/crane.svg);
-	background-position: 100% 12.3rem;
-	background-size: 93.2rem 66.9rem;
-	background-repeat: no-repeat;
-	// .about-cranes__grid
+    position: relative;
+    padding: 35rem 0 30rem;
 
-	&__grid {
-		display: grid;
-		grid-template-columns: 32rem 49.3rem 22.7rem 1fr;
-		grid-template-rows: auto 14.3rem auto;
-		grid-template-areas:
-			'title title title title'
-			'. . . .'
-			'. text . more'
-		;
-	}
+    @media(max-width: $lg) {
+        @include padding-y(var(--section-padding));
+    }
 
-	// .about-cranes__title
+    &__img {
+        display: none;
 
-	&__title {
-		grid-area: title;
-		font-size: 17.8rem;
-		line-height: 90%;
-		font-weight: 700;
-		text-transform: uppercase;
-		color: var(--gray);
+        @media(min-width: $xl) {
+            display: block;
+            position: absolute;
+            top: 12.3rem;
+            right: -93.2rem;
+            width: 93.2rem;
+            height: 66.9rem;
+            transition: 1s linear right;
 
-		span {
-			color: var(--red);
-		}
-	}
+            &.in-view {
+                right: 0;
+            }
+        }
+    }
 
-	// .about-cranes__text
+    // .about-cranes__grid
 
-	&__text {
-		grid-area: text;
-		@include row-grid(5.2rem);
-	}
+    &__grid {
+        display: grid;
 
-	// .about-cranes__more
+        @media(max-width: $lg) {
+            gap: var(--gap-l) 0;
+        }
 
-	&__more {
-		align-self: flex-end;
-		grid-area: more;
-		display: flex;
-		align-items: center;
-		gap: 9rem;
-	}
+        @media(min-width: $xl) {
+            grid-template-columns: 32rem 49.3rem 22.7rem 1fr;
+            grid-template-rows: auto 14.3rem auto;
+            grid-template-areas: 'title title title title'
+                '. . . .'
+                '. text . more'
+            ;
+        }
+    }
 
-	// .about-cranes__more-icons
+    // .about-cranes__title
 
-	&__more-icons {
-		display: flex;
-	}
+    &__title {
+        @media(min-width: $xl) {
+            max-width: 140rem;
+            grid-area: title;
+        }
+    }
 
-	// .about-cranes__more-icon
+    // .about-cranes__text
 
-	&__more-icon {
-		@include round(6rem);
-		flex-shrink: 0;
+    &__text {
+        @include row-grid(var(--gap-l));
 
-		img {
-			object-fit: cover;
-		}
-	}
+        @media(min-width: $xl) {
+            grid-area: text;
+        }
+    }
+
+    // .about-cranes__more
+
+    &__more {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 9rem;
+
+        @media(max-width: $lg) {
+            gap: var(--gap-l);
+        }
+
+        @media(min-width: $xl) {
+            align-self: flex-end;
+            grid-area: more;
+        }
+    }
+
+    // .about-cranes__more-icons
+
+    &__more-icons {
+        display: flex;
+    }
+
+    // .about-cranes__more-icon
+
+    &__more-icon {
+        @include round(6rem);
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
 }

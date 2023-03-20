@@ -1,19 +1,50 @@
 $(function () {
-    //app.burger.init();
+    app.burger.init();
 
-    //smoooth scroll to section
-    /* document.querySelectorAll('.menu__link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
+    $('.geography__logo').each(function ($index, $logo) {
+        const $clone = $($logo).clone();
+
+        $('.geography__logos').append($clone);
+    });
+
+    document.querySelectorAll('[data-section]').forEach((link) => {
+        link.addEventListener('click', () => {
             window.scrollTo({
-                top: document.getElementById(link.getAttribute('data-section')).offsetTop,
+                top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
                 behavior: "smooth"
             });
-            body.classList.remove('_lock');
-            burgerBtn.classList.remove('.is-active');
-            burgerMenu.classList.remove('.is-active');
         });
-    }); */
+    });
+
+    $('input[type="file"]').on('change', function () {
+        const $input = $(this);
+        const fileName = this.files[0].name;
+        const $placeholder = $input.closest('label').find('.placeholder');
+        $placeholder.text(fileName);
+    });
+
+    const animatedItems = document.querySelectorAll('.animated');
+
+    const callback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target)
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }
+
+    const options = {
+        // root: по умолчанию window, но можно задать любой элемент-контейнер
+        rootMargin: '0px 0px 75px 0px',
+        threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    animatedItems.forEach((item) => observer.observe(item));
 
     // popups
     //jquery

@@ -1,3 +1,43 @@
-<div class="form-section">
-  <!--your code-->
-</div>
+<aside id="contact"
+       class="section form-section">
+    <div class="container">
+        <div class="section-top section-top--orientation_col">
+            <h2 class="section-title">Оставить заявку</h2>
+            <p>
+                Наш специалист ответит на интересующие вас вопросы в течение 15 минут
+            </p>
+        </div>
+    </div>
+    <form class="form-section__form">
+        <div class="form-section__form-fields">
+            <label class="form-section__form-item">
+                <input class="form-section__form-input"
+                       placeholder="Ваше имя">
+            </label>
+            <label class="form-section__form-item">
+                <input class="form-section__form-input"
+                       type="tel"
+                       placeholder="Номер телефона">
+            </label>
+            <label class="form-section__form-item form-section__form-item--file">
+                <input class="form-section__form-input"
+                       type="file"
+                       placeholder="Прикрепить файл">
+                <span class="placeholder">Прикрепить файл</span>
+            </label>
+            <label class="form-section__form-item">
+                <textarea class="form-section__form-input"
+                          placeholder="Комментарий"></textarea>
+            </label>
+        </div>
+        <div class="form-agree form-section__agree">
+            Нажимая кнопку “Отправить”, я соглашаюсь с <a href="#"
+               class="link">условиями конфеденциальности</a>
+        </div>
+        @@include('blocks/button/button.html', {
+        "class": "form-section__form-btn",
+        "type": "submit",
+        "text": "Отправить"
+        })
+    </form>
+</aside>

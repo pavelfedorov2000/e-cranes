@@ -1,17 +1,17 @@
-<section class="news-section">
-	<div class="container">
-		<div class="news-section__inner">
-			<h2 class="section-title news-section__title">
-				Новости
-			</h2>
-			@@include('blocks/button/button.html', {
-			"class": "news-section__more",
-			"style": "more",
-			"text": "Все новости"
-			})
-			<ul class="news-section__list">
-				@@loop("blocks/news-article/news-article.html", "../resources/assets/news.json")
-			</ul>
-		</div>
-	</div>
+<section class="section news-section">
+    <div class="container">
+        <div class="news-section__inner">
+            <h2 class="section-title news-section__title">
+                Новости
+            </h2>
+            <ul class="news-section__list">
+                @@loop("blocks/news-article/news-article.html", "../resources/assets/news.json")
+            </ul>
+            @@include('blocks/button/button.html', {
+            "class": "news-section__more",
+            "style": "more",
+            "text": "Все новости"
+            })
+        </div>
+    </div>
 </section>

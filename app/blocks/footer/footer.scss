@@ -1,1 +1,193 @@
+.footer {
 
+    // .footer__decor-title
+
+    &__decor-title {
+        padding: var(--gap-xs) 2rem;
+        border-top: 0.1rem solid var(--line-color-dark);
+        border-bottom: 0.1rem solid var(--line-color-dark);
+
+        @media(max-width: $sm) {
+            @include padding-x(1.6rem);
+        }
+
+        span {
+            color: var(--red);
+        }
+    }
+
+    // .footer__main
+
+    &__main {
+        display: grid;
+
+        @media(min-width: $xl) {
+            grid-template-areas: 'end start';
+            grid-template-columns: 1fr 67rem;
+            grid-template-rows: minmax(32.8rem, max-content);
+        }
+
+        > * {
+            padding: var(--gap);
+        }
+    }
+
+    // .footer__left
+
+    &__end {
+        display: grid;
+        gap: var(--gap-xs);
+
+        @media(min-width: $md) {
+            grid-template-columns: 1fr auto;
+            grid-template-areas:
+                'menu menu'
+                'links links'
+                'copy developer'
+            ;
+        }
+
+        @media(min-width: $xl) {
+            grid-template-rows: auto 1fr auto auto;
+            grid-area: end;
+            grid-template-areas: 'menu menu'
+                '. .'
+                'links links'
+                'copy developer'
+            ;
+        }
+    }
+
+    &__menu {
+        @media(min-width: $md) {
+            grid-area: menu;
+        }
+    }
+
+    // .footer__links
+
+    &__links {
+        @media(min-width: $md) {
+            grid-area: links;
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        @media(min-width: $md) {
+            grid-area: copy;
+        }
+    }
+
+    // .footer__developer
+
+    &__developer {
+        @media(min-width: $md) {
+            grid-area: developer;
+        }
+    }
+
+    // .footer__right
+
+    &__start {
+        display: grid;
+        gap: var(--gap-xs);
+
+        @media(min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                'btn contacts'
+                'address timetable'
+            ;
+        }
+
+        @media(min-width: $xl) {
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: 'btn contacts'
+                '. .'
+                'address timetable'
+            ;
+            grid-area: start;
+            border-left: 0.1rem solid var(--line-color-dark);
+        }
+
+        @media(max-width: $sm) {
+            justify-items: start;
+        }
+    }
+
+    &__btn {
+        @media(min-width: $md) {
+            grid-area: btn;
+            align-self: start;
+            justify-self: start;
+        }
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        @include row-grid(1rem);
+
+        @media(min-width: $md) {
+            justify-items: flex-end;
+            grid-area: contacts;
+        }
+    }
+
+    // .footer__contact
+
+    &__contact {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        transition: $transition color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--red);
+            }
+        }
+
+        @media(max-width: $sm) {
+            font-size: 2rem;
+        }
+    }
+
+    // .footer__address
+
+    &__address {
+        max-width: 24.2rem;
+
+        @media(min-width: $md) {
+            grid-area: address;
+        }
+    }
+
+    // .footer__timetable
+
+    &__timetable {
+        @media(min-width: $md) {
+            grid-area: timetable;
+            justify-self: end;
+        }
+
+        @media(min-width: $xl) {
+            justify-self: center;
+        }
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-xs) 4rem;
+
+        @media(max-width: $sm) {
+            gap: 1.6rem var(--gap-xs);
+        }
+    }
+}

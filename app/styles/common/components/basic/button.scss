@@ -1,83 +1,105 @@
 .btn {
-	$this: &;
+    $this: &;
 
-	display: inline-flex;
-	align-items: center;
-	font-size: calc(#{$fz} / 10 * 1rem);
-	line-height: 1.2;
-	background-color: $color-default;
-	transition: $transition all;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--gap-xs) var(--gap);
+    border-radius: $brs-round;
+    font-size: calc(#{$fz} / 10 * 1rem);
+    line-height: calc(18 / 15 * 100%);
+    font-weight: 400;
+    background-color: $color-default;
+    transition: $transition all;
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: var(--red);
-			color: $color-default;
-		}
-	}
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--red);
+            color: $color-default;
+        }
+    }
 
-	&.disabled,
-	&[disabled] {
-		border: none;
-		cursor: not-allowed;
+    &.disabled,
+    &[disabled] {
+        border: none;
+        cursor: not-allowed;
 
-		@media (any-hover: hover) {
-			&:hover {
-				color: $color-default;
-			}
-		}
-	}
+        @media (any-hover: hover) {
+            &:hover {
+                color: $color-default;
+            }
+        }
+    }
 
-	&__arrow {
-		flex-shrink: 0;
-		margin-left: 2rem;
-		width: 6rem;
-		height: 2.4rem;
-		stroke: $color-default;
-		transition: $transition stroke;
-	}
+    &__arrow {
+        flex-shrink: 0;
+        margin-left: var(--gap-xs);
+        width: 6rem;
+        height: 2.4rem;
+        stroke: $color-default;
+        transition: $transition stroke;
+    }
 
-	&__text {
-		letter-spacing: -0.02em;
-	}
+    &__text {
+        letter-spacing: -0.02em;
+    }
 
-	&--style {
+    &--style {
 
-		&_more,
-		&_link {
-			background-color: transparent;
-			color: $color-default;
+        &_more,
+        &_link {
+            padding: 0;
+            background-color: transparent;
+            color: $color-default;
 
-			#{$this} {
-				&__text {
-					text-decoration: underline;
-				}
-			}
+            #{$this} {
+                &__text {
+                    border-bottom: 0.1rem solid #fff;
+                    transition: $transition border-bottom-color;
+                }
+            }
 
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: transparent;
-					color: var(--red);
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: transparent;
+                    color: var(--red);
 
-					#{$this}__arrow {
-						stroke: var(--red);
-					}
-				}
-			}
-		}
+                    #{$this} {
+                        &__arrow {
+                            stroke: var(--red);
+                        }
 
-		&_border {
-			padding: 2rem var(--gap);
-			background-color: $color-default;
-			border-radius: $brs-round;
-			border: 0.1rem solid var(--dark);
-			color: var(--dark);
+                        &__text {
+                            border-bottom-color: var(--red);
+                        }
+                    }
+                }
+            }
+        }
 
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: var(--dark);
-					color: $color-default;
-				}
-			}
-		}
-	}
+        &_border {
+            background-color: $color-default;
+            border: 0.1rem solid var(--dark);
+            color: var(--dark);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: var(--dark);
+                    color: $color-default;
+                }
+            }
+        }
+
+        &_border-white {
+            border: 0.1rem solid #fff;
+            background-color: transparent;
+            color: #fff;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #fff;
+                    color: var(--dark);
+                }
+            }
+        }
+    }
 }

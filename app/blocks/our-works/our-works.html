@@ -1,3 +1,93 @@
-<div class="our-works">
-  <!--your code-->
-</div>
+<section class="section our-works">
+    <div class="container our-works__grid">
+        <div class="section-top our-works__top">
+            <h2 class="section-title">Наши работы</h2>
+            <div class="swiper-btns">
+                <div class="swiper-button-prev">
+                    <svg width="41"
+                         height="18"
+                         viewBox="0 0 41 18"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M8 1L1 9L8 17" />
+                        <path fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M41 9H1" />
+                    </svg>
+                </div>
+                <div class="swiper-button-next">
+                    <svg width="41"
+                         height="18"
+                         viewBox="0 0 41 18"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M33 1L40 9L33 17" />
+                        <path fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M0 9H40" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="swiper our-works-slider our-works__slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture>
+                        <source type="image/webp"
+                                srcset="assets/images/content/works/01.webp">
+                        <img src="assets/images/content/works/01.jpg"
+                             alt="фото"
+                             width="440"
+                             height="590"
+                             loading="lazy">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source type="image/webp"
+                                srcset="assets/images/content/works/02.webp">
+                        <img src="assets/images/content/works/02.jpg"
+                             alt="фото"
+                             width="440"
+                             height="590"
+                             loading="lazy">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source type="image/webp"
+                                srcset="assets/images/content/works/03.webp">
+                        <img src="assets/images/content/works/03.jpg"
+                             alt="фото"
+                             width="440"
+                             height="590"
+                             loading="lazy">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source type="image/webp"
+                                srcset="assets/images/content/works/04.webp">
+                        <img src="assets/images/content/works/04.jpg"
+                             alt="фото"
+                             width="440"
+                             height="590"
+                             loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        @@include('blocks/button/button.html', {
+        "class": "our-works__btn",
+        "style": "more",
+        "text": "Все работы"
+        })
+        <p class="our-works__text">
+            Монтаж мостового крана на г/п 3,2 т и троллейного шинопровода компании Konecranes.
+        </p>
+    </div>
+</section>

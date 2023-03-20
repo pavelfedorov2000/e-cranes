@@ -1,40 +1,59 @@
 <section class="about-cranes">
-	<div class="container">
-		<div class="about-cranes__grid">
-			<h2 class="about-cranes__title">
-				<span>Cranes</span>
-				Engineering
-			</h2>
-			<div class="about-cranes__text">
-				<p>
-					Инжиниринговая компания в сфере индустриальных кранов. Предоставляет специализированные услуги в
-					области модернизации, ремонта, сервиса и поставок кранового оборудования.
-				</p>
-				<p>
-					Мы помогаем поддерживать работоспособность техники в тяжелых условиях эксплуатации, вовремя
-					устранять дефекты, оснащать краны современным оборудованием, повышать эффективность работы кранов.
-				</p>
-			</div>
-			<div class="about-cranes__more">
-				<div class="about-cranes__more-icons">
-					<picture class="about-cranes__more-icon">
-						<source type="image/webp" srcset="assets/images/icons/01.webp">
-						<img src="assets/images/icons/01.jpg" alt="" width="60" height="60" loading="lazy">
-					</picture>
-					<picture class="about-cranes__more-icon">
-						<source type="image/webp" srcset="assets/images/icons/02.webp">
-						<img src="assets/images/icons/02.jpg" alt="" width="60" height="60" loading="lazy">
-					</picture>
-					<picture class="about-cranes__more-icon">
-						<source type="image/webp" srcset="assets/images/icons/03.webp">
-						<img src="assets/images/icons/03.jpg" alt="" width="60" height="60" loading="lazy">
-					</picture>
-				</div>
-				@@include('blocks/button/button.html', {
-				"style": "more",
-				"text": "Подробнее о компании"
-				})
-			</div>
-		</div>
-	</div>
+    <img class="about-cranes__img animated"
+         src="assets/images/content/crane.svg"
+         alt="кран"
+         loading="lazy">
+    <div class="container">
+        <div class="about-cranes__grid">
+            <h2 class="about-cranes__title decor-title animated animated--text">
+                <span>Cranes</span>
+                Engineering
+            </h2>
+            <div class="about-cranes__text animated animated--text">
+                <p>
+                    Инжиниринговая компания в сфере индустриальных кранов. Предоставляет специализированные услуги в
+                    области модернизации, ремонта, сервиса и поставок кранового оборудования.
+                </p>
+                <p>
+                    Мы помогаем поддерживать работоспособность техники в тяжелых условиях эксплуатации, вовремя
+                    устранять дефекты, оснащать краны современным оборудованием, повышать эффективность работы кранов.
+                </p>
+            </div>
+            <div class="about-cranes__more">
+                <div class="about-cranes__more-icons">
+                    <picture class="about-cranes__more-icon">
+                        <source type="image/webp"
+                                srcset="assets/images/icons/01.webp">
+                        <img src="assets/images/icons/01.jpg"
+                             alt=""
+                             width="60"
+                             height="60"
+                             loading="lazy">
+                    </picture>
+                    <picture class="about-cranes__more-icon">
+                        <source type="image/webp"
+                                srcset="assets/images/icons/02.webp">
+                        <img src="assets/images/icons/02.jpg"
+                             alt=""
+                             width="60"
+                             height="60"
+                             loading="lazy">
+                    </picture>
+                    <picture class="about-cranes__more-icon">
+                        <source type="image/webp"
+                                srcset="assets/images/icons/03.webp">
+                        <img src="assets/images/icons/03.jpg"
+                             alt=""
+                             width="60"
+                             height="60"
+                             loading="lazy">
+                    </picture>
+                </div>
+                @@include('blocks/button/button.html', {
+                "style": "more",
+                "text": "Подробнее о компании"
+                })
+            </div>
+        </div>
+    </div>
 </section>

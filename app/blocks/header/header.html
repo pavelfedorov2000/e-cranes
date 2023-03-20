@@ -1,61 +1,104 @@
 <header class="header">
-	<div class="container header__inner">
-		<a class="logo header__logo" href="#">
-			<img class="logo__img" src="assets/images/logo/logo.svg" alt="Логотип Cranes Engineering">
-		</a>
-		<nav class="nav-menu">
-			<ul class="nav-menu__list">
-				<li>
-					<a class="nav-menu__link menu-link" href="#">
-						<svg class="menu-link__icon" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="2" cy="2" r="2" fill-rule="evenodd" clip-rule="evenodd" />
-							<circle cx="2" cy="8" r="2" fill-rule="evenodd" clip-rule="evenodd" />
-							<circle cx="8" cy="2" r="2" fill-rule="evenodd" clip-rule="evenodd" />
-							<circle cx="8" cy="8" r="2" fill-rule="evenodd" clip-rule="evenodd" />
-						</svg>
-						<span class="menu-link__text">Услуги</span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-menu__link menu-link" href="#">
-						<span class="menu-link__text">О компании</span>
-						<svg class="menu-link__icon menu-link__icon--drop" viewBox="0 0 10 7" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 1L5 5L9 1" fill-rule="evenodd" clip-rule="evenodd" stroke-width="1.5" />
-						</svg>
-					</a>
-					<div class="nav-menu__drop">
-						<ul class="nav-submenu">
-							<li>
-								<a href="#" class="nav-submenu__link">Блог</a>
-							</li>
-							<li>
-								<a href="#" class="nav-submenu__link">Документация</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a class="nav-menu__link menu-link" href="#">
-						<span class="menu-link__text">Наши работы</span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-menu__link menu-link" href="#">
-						<span class="menu-link__text">Продукция</span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-menu__link menu-link" href="#">
-						<span class="menu-link__text">Контакты</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-		@@include('blocks/button/button.html', {
-		"href": "#contact",
-		"class": "header__btn",
-		"text": "Связаться с нами"
-		})
-	</div>
+    <div class="container header__inner">
+        <a class="logo header__logo"
+           href="#">
+            <img class="logo__img"
+                 src="assets/images/logo/logo.svg"
+                 alt="Логотип Cranes Engineering">
+        </a>
+        <nav id="menu"
+             class="nav-menu">
+            <button class="close-btn nav-menu__close">
+                &times;
+            </button>
+            <ul class="nav-menu__list">
+                <li>
+                    <a href="#"
+                       class="nav-menu__link menu-link">
+                        <svg class="menu-link__icon"
+                             viewBox="0 0 10 10"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="2"
+                                    cy="2"
+                                    r="2"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd" />
+                            <circle cx="2"
+                                    cy="8"
+                                    r="2"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd" />
+                            <circle cx="8"
+                                    cy="2"
+                                    r="2"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd" />
+                            <circle cx="8"
+                                    cy="8"
+                                    r="2"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd" />
+                        </svg>
+                        <span class="menu-link__text">Услуги</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="nav-menu__link menu-link">
+                        <a href="#"
+                           class="menu-link__text">О компании</a>
+                        <button class="menu-link__drop"
+                                aria-expanded="false"
+                                type="button">
+                            <svg class="menu-link__icon menu-link__icon--drop"
+                                 viewBox="0 0 10 7"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1"
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      stroke-width="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="nav-menu__drop">
+                        <ul class="nav-submenu">
+                            <li>
+                                <a href="#"
+                                   class="nav-submenu__link">Блог</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="nav-submenu__link">Документация</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-menu__link menu-link"
+                       href="#">
+                        <span class="menu-link__text">Наши работы</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-menu__link menu-link"
+                       href="#">
+                        <span class="menu-link__text">Продукция</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-menu__link menu-link"
+                       href="#">
+                        <span class="menu-link__text">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        @@include('blocks/button/button.html', {
+        "scrollSection": "contact",
+        "class": "header__btn",
+        "text": "Связаться с нами"
+        })
+        @@include('blocks/burger-btn/burger-btn.html')
+    </div>
 </header>

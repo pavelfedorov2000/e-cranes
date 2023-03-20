@@ -1,37 +1,57 @@
 .news-section {
-	@include padding-y(var(--section-padding));
-	// .news-section__inner
+    border-top: 0.1rem solid var(--line-color-dark);
 
-	&__inner {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		grid-template-areas:
-			'title news'
-			'more news'
-		;
-	}
+    &__inner {
+        display: grid;
 
-	// .news-section__title
+        @media(min-width: $xl) {
+            grid-template-columns: 1fr auto;
+            grid-template-areas: 'title news'
+                'more news'
+            ;
+        }
 
-	&__title {
-		grid-area: title;
-	}
+        @media(max-width: $lg) {
+            gap: var(--gap-l);
+        }
+    }
 
-	&__more {
-		grid-area: more;
-	}
+    // .news-section__title
 
-	// .news-section__list
+    &__title {
+        @media(min-width: $xl) {
+            grid-area: title;
+        }
+    }
 
-	&__list {
-		display: grid;
-		grid-template-columns: repeat(4, 26rem);
-		gap: var(--gap-xl);
-		padding-left: var(--gap-xl);
-		border-left: 0.1rem solid var(--dark-gray);
-	}
+    &__more {
+        @media(min-width: $xl) {
+            grid-area: more;
+        }
+
+        @media(max-width: $lg) {
+            justify-self: center;
+        }
+    }
+
+    // .news-section__list
+
+    &__list {
+        display: grid;
+        gap: var(--gap-xl);
+
+        @media(min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media(min-width: $xl) {
+            padding-left: var(--gap-xl);
+            border-left: 0.1rem solid var(--dark-gray);
+            grid-template-columns: repeat(4, 26rem);
+        }
+
+        @media(max-width: $lg) {
+            gap: var(--gap);
+        }
+    }
 }
-
-.container {}
-
-.section-title {}

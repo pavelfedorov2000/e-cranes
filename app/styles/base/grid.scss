@@ -1,19 +1,41 @@
 .container {
-	//width: calc(var(--container-width) + var(--container-padding) * 2);
-	//max-width: 100%;
-	@include padding-x(var(--gap));
-	//margin: 0 auto;
+    @include padding-x(var(--gap));
 }
 
 .wrapper {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .page {
-	position: relative;
-	flex: 1 0 auto; // Footer at bottom
+    position: relative;
+    flex: 1 0 auto;
+}
+
+.section {
+    @include padding-y(var(--section-padding));
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--gap-xs);
+
+        &__text {
+            max-width: 58rem;
+        }
+
+
+        &--orientation {
+            &_col {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+    }
 }
