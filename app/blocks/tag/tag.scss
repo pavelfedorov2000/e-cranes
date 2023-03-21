@@ -6,14 +6,18 @@
 .tag {
     position: relative;
     z-index: 2;
+    display: inline-block;
     padding: 0.8rem 1.2rem;
     border: 0.1rem solid var(--line-color-dark);
     border-radius: $brs-2;
-    transition: $transition border-color, $transition color;
+    transition: $transition border-color,
+        $transition color,
+        $transition background-color;
 
     @media (any-hover: hover) {
         &:hover {
-            border-color: $color-default;
+            background-color: var(--red);
+            border-color: var(--red);
             color: $color-default;
         }
     }

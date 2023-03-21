@@ -1,5 +1,5 @@
 .products {
-    background-color: $color-default;
+    background-color: var(--light-gray);
     color: var(--dark);
     display: grid;
     border-bottom: 0.1rem solid var(--gray-2);
@@ -97,6 +97,23 @@
     background-color: var(--light-gray);
     transition: $transition background-color;
 
+    &::after {
+        content: '';
+        position: absolute;
+        top: var(--gap);
+        right: var(--gap);
+        @include round(4.8rem);
+        background-image: url(../images/icons/round-arrow-btn-gray.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media(min-width: $xl) {
+            @include hide();
+            transition: $transition all;
+        }
+    }
+
     // .product-item__title
 
     &__title {
@@ -153,6 +170,10 @@
         &:hover {
             background-color: #fff;
 
+            &::after {
+                @include show();
+            }
+
             #{$this} {
                 &__title {
                     text-decoration: underline;
@@ -163,6 +184,8 @@
 }
 
 .good-item {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     transition: $transition color;

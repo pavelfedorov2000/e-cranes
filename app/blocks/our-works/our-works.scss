@@ -29,6 +29,10 @@
     }
 
     &__text {
+        @media(min-width: $md) {
+            font-size: 2.4rem;
+        }
+
         @media(min-width: $xl) {
             grid-area: text;
         }

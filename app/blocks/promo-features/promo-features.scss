@@ -30,6 +30,10 @@
 
     @media(min-width: $xl) {
         @include padding-x(10rem);
+        position: relative;
+        min-height: 8rem;
+        display: flex;
+        align-items: center;
     }
 
     // .promo-feature__link
@@ -112,7 +116,15 @@
 
     & + #{$this} {
         @media(min-width: $xl) {
-            border-left: 0.1rem solid var(--dark-gray);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 0.1rem;
+                background-color: var(--dark-gray);
+            }
         }
     }
 }

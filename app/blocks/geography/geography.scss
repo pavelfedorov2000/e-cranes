@@ -1,4 +1,6 @@
 .geography {
+    $this: &;
+
     position: relative;
     padding-top: var(--gap-xl);
     background-color: var(--light-gray);
@@ -68,11 +70,6 @@
             width: 100%;
             height: 0;
             transition: $transition-long height;
-            //height: 12.4rem;
-
-            @media(max-width: $sm) {
-                height: 8rem;
-            }
         }
 
         &:first-child {
@@ -90,6 +87,10 @@
         &.in-view {
             img {
                 height: 12.4rem;
+
+                @media(max-width: $sm) {
+                    height: 8rem;
+                }
             }
         }
     }
@@ -138,15 +139,36 @@
     }
 
     &__logos {
-        @include padding-y(var(--gap));
-        width: calc(100vw - var(--gap) * 2);
-        border-top: 0.1rem solid #fff;
+        position: relative;
         display: flex;
-        flex-direction: row-reverse;
-        animation-duration: 12s;
-        animation-name: marquee;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
+
+        @media(min-width: $md) {
+            width: calc(100vw - var(--gap) * 2);
+            flex-direction: row-reverse;
+            animation-duration: 15s;
+            animation-name: marquee;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 0;
+        }
+
+        @media(max-width: $sm) {
+            overflow-x: auto;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1rem;
+            background-color: #fff;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -160,17 +182,38 @@
     }
 
     &__logo {
+        position: relative;
         flex-shrink: 0;
         width: calc((100vw - var(--gap) * 2) / 9);
+        @include padding-y(var(--gap));
         @include padding-x(4.2rem);
-        border-left: 0.1rem solid #fff;
-        border-right: 0.1rem solid #fff;
+        border-top: 0.1rem solid #fff;
+        display: grid;
         transition: $transition opacity;
 
-        @media (any-hover: hover) {
-            &:hover {
-                opacity: 0.4;
+        &.clone {
+            @media(max-width: $sm) {
+                display: none;
             }
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.1rem;
+            height: 6rem;
+            background-color: #fff;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
         }
 
         @media(max-width: $lg) {
@@ -179,13 +222,47 @@
 
         @media(max-width: $sm) {
             @include padding-x(var(--gap));
-            width: calc((100vw - var(--gap) * 2) / 2);
+            width: auto;
+            //width: calc((100vw - var(--gap) * 2) / 2);
         }
 
         img {
             width: 13rem;
             height: 6rem;
             object-fit: contain;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                #{$this} {
+                    &__logo-img {
+                        opacity: 0;
+
+                        &.hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__logo-img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        transition: $transition opacity;
+
+        @media(max-width: $lg) {
+            display: none;
+        }
+
+        &.hover {
+            opacity: 0;
+
+            @media(max-width: $lg) {
+                display: block;
+                opacity: 1;
+            }
         }
     }
 
@@ -222,37 +299,24 @@
             &-13,
             &-14 {
                 animation-duration: 3s;
-                animation-name: mapPin;
+                animation-name: dot;
                 animation-timing-function: linear;
                 animation-iteration-count: infinite;
             }
-
-            /* &-2,
-            &-4,
-            &-6,
-            &-8,
-            &-10,
-            &-12,
-            &-14 {
-                animation-delay: 3s;
-            } */
         }
     }
 }
 
-@keyframes mapPin {
+@keyframes dot {
     0% {
-        //fill: var(--dark);
         r: 0.4rem;
     }
 
     50% {
-        //fill: var(--red);
         r: 1rem;
     }
 
     100% {
-        //fill: var(--dark);
         r: 0.4rem;
     }
 }

@@ -1,6 +1,6 @@
 .free-consultations {
     @include padding-y(var(--gap));
-    background-color: $color-default;
+    background-color: var(--light-gray);
     color: var(--dark);
     border-bottom: 0.1rem solid var(--gray-2);
     // .free-consultations__grid

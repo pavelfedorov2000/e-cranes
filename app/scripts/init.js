@@ -1,11 +1,13 @@
 $(function () {
     app.burger.init();
 
-    $('.geography__logo').each(function ($index, $logo) {
-        const $clone = $($logo).clone();
+    if ($(window).width() >= 768) {
+        $('.geography__logo').each(function ($index, $logo) {
+            const $clone = $($logo).clone();
 
-        $('.geography__logos').append($clone);
-    });
+            $('.geography__logos').append($clone);
+        });
+    }
 
     document.querySelectorAll('[data-section]').forEach((link) => {
         link.addEventListener('click', () => {
