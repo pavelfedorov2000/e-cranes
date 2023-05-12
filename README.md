@@ -1,6 +1,8 @@
 # Cranes Engineering
 **Редизайн страниц сайта**
 
+http://pavfed.com/cranes/
+
 <img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/698da64e-14fb-4fb8-9aa4-8bb85bba64f6" />
 <img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/6f9a4ca7-2ccc-43c9-84b5-be4ee8f76a86" />
 <img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/25bdd358-499e-4868-95b9-297372f20178" />
