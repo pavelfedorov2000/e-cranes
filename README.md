@@ -1,6 +1,17 @@
 # Cranes Engineering
 **Редизайн страниц сайта**
 
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/698da64e-14fb-4fb8-9aa4-8bb85bba64f6" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/6f9a4ca7-2ccc-43c9-84b5-be4ee8f76a86" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/25bdd358-499e-4868-95b9-297372f20178" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/1d99a048-19e5-4525-bf8a-350bec9c6666" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/128a2e4d-445e-4295-a02c-09d388ca3644" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/63702134-4829-4227-b266-6c039a32596f" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/0e882521-95db-4d72-86e0-fdd63d9a21ba" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/88b1b8a4-4a8b-4f84-8b17-690693184095" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/d5ef286e-f5c0-45d5-bcd2-5ef5a4694905" />
+<img src="https://github.com/pavelfedorov2000/e-cranes/assets/66357864/834796bc-90bd-48af-854a-91cb54c2ac2d" />
+
 ## Команды для запуска
 
 ### Запуск с отслеживанием изменений
